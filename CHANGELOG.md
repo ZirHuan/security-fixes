@@ -1,5 +1,14 @@
 # Changelog
 
+## php-cve-2026-109618-v1.2.0 — 2026-10-22
+- New: `Diagnose-PHP` ends with a **SUMMARY / SAMMANFATTNING**: verdict (NOT AFFECTED /
+  PROBABLY NOT EXPOSED / AFFECTED - FIX / OK - PATCHED / CHECK MANUALLY), reasons,
+  action, computer + date + OS, and one `computer;date;verdict;reasons` row to paste
+  into an inventory list. Judges each PHP engine (one per folder) against the
+  fixed-version table, and whether IIS (FastCGI/handlers) or Apache/nginx uses it.
+- Tested on Windows Server 2022 / PS 5.1: clean machine, stray .php file, PHP on
+  disk without IIS, IIS + vulnerable PHP 8.3.10, and after the fix (8.3.36 + backup).
+
 ## php-cve-2026-109618-linux-v1.0.0 — 2026-10-22
 - New: `php/CVE-2026-109618_109619-linux/find-php-linux.sh` – read-only check for Linux.
   Finds every php/php-fpm/php-cgi binary, php.ini, how PHP is served (php-fpm units,

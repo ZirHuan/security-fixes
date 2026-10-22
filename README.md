@@ -11,7 +11,7 @@ Each folder has its own README with usage, what it changes, and how to roll back
 
 | Product | CVE | Platform | Severity | Tool | Status |
 |---|---|---|---|---|---|
-| PHP | CVE-2026-109618, CVE-2026-109619 (unauthenticated RCE) | Windows / IIS (FastCGI) | Critical, CVSS 9.2 | [php/CVE-2026-109618_109619-win-iis](php/CVE-2026-109618_109619-win-iis/) | v1.1.0 · [⬇ English](https://github.com/ZirHuan/security-fixes/releases/download/php-cve-2026-109618-v1.1.0/PHP-IIS-Fix-CVE-2026-109618-109619-v1.1.0-en.zip) · [⬇ Svenska](https://github.com/ZirHuan/security-fixes/releases/download/php-cve-2026-109618-v1.1.0/PHP-IIS-Fix-CVE-2026-109618-109619-v1.1.0-sv.zip) |
+| PHP | CVE-2026-109618, CVE-2026-109619 (unauthenticated RCE) | Windows / IIS (FastCGI) | Critical, CVSS 9.2 | [php/CVE-2026-109618_109619-win-iis](php/CVE-2026-109618_109619-win-iis/) | v1.2.0 · [⬇ English](https://github.com/ZirHuan/security-fixes/releases/download/php-cve-2026-109618-v1.2.0/PHP-IIS-Fix-CVE-2026-109618-109619-v1.2.0-en.zip) · [⬇ Svenska](https://github.com/ZirHuan/security-fixes/releases/download/php-cve-2026-109618-v1.2.0/PHP-IIS-Fix-CVE-2026-109618-109619-v1.2.0-sv.zip) |
 | PHP | CVE-2026-109618, CVE-2026-109619 (unauthenticated RCE) | Linux (any distro) – read-only check | Critical, CVSS 9.2 | [php/CVE-2026-109618_109619-linux](php/CVE-2026-109618_109619-linux/) | v1.0.0 · [⬇ find-php-linux.sh](https://github.com/ZirHuan/security-fixes/releases/download/php-cve-2026-109618-linux-v1.0.0/find-php-linux.sh) |
 
 ## Conventions
