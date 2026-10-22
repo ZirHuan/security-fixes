@@ -1,5 +1,18 @@
 # Changelog
 
+## php-cve-2026-109618-v1.1.0 — 2026-10-22
+- New: **English version of the whole package.** One shared script with
+  `-Lang en|sv` (default `en`); separate zips per language:
+  - English: `Test-PHP.cmd`, `Fix-PHP.cmd` (confirm with YES), `Diagnose-PHP.cmd`, `README.md`
+  - Svenska: `Testa-PHP.cmd`, `Atgarda-PHP.cmd` (bekräfta med JA), `Diagnos-PHP.cmd`, `README.md`
+- Fix: Swedish output now uses correct spelling with å/ä/ö (was transliterated
+  "saarbar", "aatgaerda"). The .ps1 source stays pure ASCII + UTF-8 BOM: the
+  letters are written as tokens (`&a;` `&e;` `&o;`) and decoded at runtime.
+- New: `Diagnos-PHP.cmd` / `Diagnose-PHP.cmd` double-click wrappers for the diagnosis.
+- Tested on Windows Server 2022 / PS 5.1: parse check, EN + SV test, SV fix
+  answered NEJ (nothing changed) and JA (8.3.10 -> 8.3.36, IIS running), EN
+  re-check = OK, diagnosis in both languages, Swedish letters correct in the log file.
+
 ## php-cve-2026-109618-v1.0.2 — 2026-10-22
 - New: `Diagnose-PHP.ps1` (read-only): scans all fixed disks in one pass for PHP
   binaries, php.ini and .php files (grouped per folder), plus IIS FastCGI/handlers/
