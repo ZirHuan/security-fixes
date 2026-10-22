@@ -1,5 +1,21 @@
 # Changelog
 
+## php-cve-2026-109618-linux-v1.1.0 — 2026-10-22
+- New: **SUMMARY** with one verdict per server, using the same names as the Windows
+  tool: NOT AFFECTED / OK - PATCHED / AFFECTED - FIX / CHECK MANUALLY /
+  PROBABLY NOT EXPOSED, plus reasons and the action to take.
+- New: **exposure check** – a vulnerable PHP only counts as AFFECTED when a web server
+  can use it (Apache/nginx/lighttpd/caddy/php-fpm running or active unit, or Apache
+  mod_php enabled). CLI-only PHP gives PROBABLY NOT EXPOSED (exit 3).
+- New: inventory row `host;date;verdict;reasons` and `--row` (row only, for fleet runs
+  over ssh) – Windows and Linux rows fit in one list.
+- New: every run is logged to `/var/log/php-cve-check/` (non-root: `~/php-cve-check/`),
+  colour codes stripped; `--no-log` to skip. Coloured output on a terminal.
+- Change: exit codes 0 = OK/not affected, 1 = affected, 2 = check manually, 3 = not exposed.
+- Change: process list collapsed to one line per program and user.
+- Tested on 14 setups (Debian 12, Ubuntu 22.04/24.04, Rocky 9, Fedora 41, Alpine 3.20,
+  official php images, non-root, no PHP, host with a PHP container) – README table.
+
 ## php-cve-2026-109618-v1.2.0 — 2026-10-22
 - New: `Diagnose-PHP` ends with a **SUMMARY / SAMMANFATTNING**: verdict (NOT AFFECTED /
   PROBABLY NOT EXPOSED / AFFECTED - FIX / OK - PATCHED / CHECK MANUALLY), reasons,
