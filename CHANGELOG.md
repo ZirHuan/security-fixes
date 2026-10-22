@@ -1,5 +1,18 @@
 # Changelog
 
+## php-cve-2026-109618-linux-v1.0.0 — 2026-10-22
+- New: `php/CVE-2026-109618_109619-linux/find-php-linux.sh` – read-only check for Linux.
+  Finds every php/php-fpm/php-cgi binary, php.ini, how PHP is served (php-fpm units,
+  Apache mod_php, nginx fastcgi_pass, processes), Docker containers with PHP, and
+  .php files per folder.
+- Distro backports detected from local package changelogs (dpkg / rpm), so e.g.
+  Ubuntu 24.04's 8.3.6 or RHEL 9's 8.0.30 are reported PATCHED instead of vulnerable.
+- One result per binary (OK / PATCHED / VULNERABLE / UNSUPPORTED / CHECK MANUALLY),
+  summary line and exit codes 0/1/2 for automation.
+- Tested on Debian 12, Ubuntu 22.04 / 24.04, Rocky 9, Fedora 41, Alpine 3.20,
+  official php Docker images (8.3.36, 8.3.10), non-root, no-PHP and a host with a
+  PHP container – see the README test table.
+
 ## php-cve-2026-109618-v1.1.0 — 2026-10-22
 - New: **English version of the whole package.** One shared script with
   `-Lang en|sv` (default `en`); separate zips per language:
