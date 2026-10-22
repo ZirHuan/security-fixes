@@ -1,5 +1,21 @@
 # Changelog
 
+## php-cve-2026-109618-v1.0.2 — 2026-10-22
+- New: `Diagnose-PHP.ps1` (read-only): scans all fixed disks in one pass for PHP
+  binaries, php.ini and .php files (grouped per folder), plus IIS FastCGI/handlers/
+  web.config, sites, and Apache/nginx/XAMPP services and processes. Included in the zip.
+- Fix: PHP on disk that IIS does not use is no longer executed (file version only) -
+  a hanging php-cgi.exe outside IIS cost 30 s per run.
+- Fix: IIS FastCGI pointing at a missing php-cgi.exe is now reported as broken config.
+- Fix: no fixed Windows build for the branch (e.g. PHP 8.1, newest Windows build 8.1.34)
+  now gives a clear message instead of a bare 404; nothing is changed.
+- Fix: "IIS har startats igen" was printed even when IIS was never stopped.
+- Backup folders from an earlier fix (`*.old-<timestamp>`) are labelled as backups.
+- Tested on Windows Server 2022 / PS 5.1 (9 scenarios): no IIS, IIS without PHP,
+  two PHP installs in IIS (incl. WebPI layout), EOL 8.1, hanging php-cgi, missing
+  php-cgi, fix 8.1 (no build), **full fix 8.3.10 -> 8.3.36** (SHA256, backup, php.ini
+  kept, IIS up) and re-check = OK.
+
 ## php-cve-2026-109618-v1.0.1 — 2026-10-22
 - Fix: test hung for a long time when IIS had no PHP configured. The fallback
   disk search (`Get-ChildItem 'C:\PHP*' -Recurse -Depth 2`) scanned the whole C:
